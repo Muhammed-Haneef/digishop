@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Hexashop - Contact Page</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+
+    <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="{% static 'assets/images/logo.png' %}">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{% url 'home_pg' %}" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'home_pg' %}#men">Categories</a></li>
+                             <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                                    <li><a href="{% url 'about_us' %}">About Us</a></li>
+<!--                            <li class="scroll-to-section"><a href="index.html">Women's</a></li>-->
+<!--                            <li class="scroll-to-section"><a href="index.html">Kid's</a></li>-->
+<!--                            <li class="submenu">-->
+<!--                                <a href="javascript:;">Pages</a>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="about.html">About Us</a></li>-->
+<!--                                    <li><a href="products.html">Products</a></li>-->
+<!--                                    <li><a href="single-product.html">Single Product</a></li>-->
+<!--                                    <li><a href="contact.html">Contact Us</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+                           <li class="submenu">
+                                {% if request.session.User_Name %}
+                                <a href="javascript:;">{{request.session.User_Name}}</a>
+                                <ul>
+                                    <li><a href="{% url 'cart_pg' %}">Cart</a></li>
+                                    <li><a href="{% url 'del_user' %}">Logout</a></li>
+
+
+                                    {% else %}
+                                      <li><a href="{% url 'log_pg' %}">Log In</a></li>
+
+                                     {% endif %}
+                                </ul>
+                            </li>
+<!--                            <li class="scroll-to-section"><a href="index.html">Explore</a></li>-->
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading about-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>Cart</h2>
+<!--                        <span>Awesome, clean &amp; creative HTML5 Template</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Contact Area Starts ***** -->
+<!--    <div class="contact-us">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--&lt;!&ndash;                <div class="col-lg-6">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div id="map">&ndash;&gt;-->
+<!--&lt;!&ndash;                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90186.37207676383!2d-80.13495239500924!3d25.9317678710111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad1877e4a82d%3A0xa891714787d1fb5e!2sPier%20Park!5e1!3m2!1sen!2sth!4v1637512439384!5m2!1sen!2sth" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>&ndash;&gt;-->
+<!--&lt;!&ndash;                      &lt;!&ndash; You can simply copy and paste "Embed a map" code from Google Maps for any location. &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div class="col-lg-6">-->
+<!--&lt;!&ndash;                    <div class="section-heading">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h2>Say Hello. Don't Be Shy!</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span>Details to details is what makes Hexashop different from the other themes.</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <form id="contact" action="" method="post">-->
+<!--                        <div class="row">-->
+<!--                          <div class="col-lg-6">-->
+<!--                            <fieldset>-->
+<!--                              <input name="name" type="text" id="name" placeholder="Your name" required="">-->
+<!--                            </fieldset>-->
+<!--                          </div>-->
+<!--                          <div class="col-lg-6">-->
+<!--                            <fieldset>-->
+<!--                              <input name="email" type="text" id="email" placeholder="Your email" required="">-->
+<!--                            </fieldset>-->
+<!--                          </div>-->
+<!--                          <div class="col-lg-12">-->
+<!--                            <fieldset>-->
+<!--                              <textarea name="message" rows="6" id="message" placeholder="Your message" required=""></textarea>-->
+<!--                            </fieldset>-->
+<!--                          </div>-->
+<!--                          <div class="col-lg-12">-->
+<!--                            <fieldset>-->
+<!--                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>-->
+<!--                            </fieldset>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <section class="h-100 h-custom" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+
+            <div class="row">
+
+              <div class="col-lg-7">
+                <h5 class="mb-3"><a href="#!" class="text-body"><i
+                      class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                <hr>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div>
+                    <p class="mb-1">Shopping cart</p>
+<!--                    <p class="mb-0">You have 4 items in your cart</p>-->
+                  </div>
+                  <div>
+                    <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!"
+                        class="text-body">price <i class="fas fa-angle-down mt-1"></i></a></p>
+                  </div>
+                </div>
+                   {% for i in cartdata %}
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                        </div>
+                        <div class="ms-3">
+                          <h5>{{i.Product_Name}}</h5>
+<!--                          <p class="small mb-0">256GB, Navy Blue</p>-->
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px;">
+                          <h5 class="fw-normal mb-0">{{i.Quantity}}</h5>
+                        </div>
+                        <div style="width: 80px;">
+                          <h5 class="mb-0">{{i.Total_price}}</h5>
+                        </div>
+                          <form action="{% url 'cartdlt' dataid=i.id %}">
+                          <button type="submit" id="" class="main-dark-button" fdprocessedid="225ix9"><i class="fa fa-trash"></i></button>
+                           </form>
+                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  {% endfor %}
+
+<!--                <div class="card mb-3">-->
+<!--                  <div class="card-body">-->
+<!--                    <div class="d-flex justify-content-between">-->
+<!--                      <div class="d-flex flex-row align-items-center">-->
+<!--                        <div>-->
+<!--                          <img-->
+<!--                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp"-->
+<!--                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">-->
+<!--                        </div>-->
+<!--                        <div class="ms-3">-->
+<!--                          <h5>Samsung galaxy Note 10 </h5>-->
+<!--                          <p class="small mb-0">256GB, Navy Blue</p>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="d-flex flex-row align-items-center">-->
+<!--                        <div style="width: 50px;">-->
+<!--                          <h5 class="fw-normal mb-0">2</h5>-->
+<!--                        </div>-->
+<!--                        <div style="width: 80px;">-->
+<!--                          <h5 class="mb-0">$900</h5>-->
+<!--                        </div>-->
+<!--                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="card mb-3">-->
+<!--                  <div class="card-body">-->
+<!--                    <div class="d-flex justify-content-between">-->
+<!--                      <div class="d-flex flex-row align-items-center">-->
+<!--                        <div>-->
+<!--                          <img-->
+<!--                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp"-->
+<!--                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">-->
+<!--                        </div>-->
+<!--                        <div class="ms-3">-->
+<!--                          <h5>Canon EOS M50</h5>-->
+<!--                          <p class="small mb-0">Onyx Black</p>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="d-flex flex-row align-items-center">-->
+<!--                        <div style="width: 50px;">-->
+<!--                          <h5 class="fw-normal mb-0">1</h5>-->
+<!--                        </div>-->
+<!--                        <div style="width: 80px;">-->
+<!--                          <h5 class="mb-0">$1199</h5>-->
+<!--                        </div>-->
+<!--                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <div class="card mb-3 mb-lg-0">-->
+<!--                  <div class="card-body">-->
+<!--                    <div class="d-flex justify-content-between">-->
+<!--                      <div class="d-flex flex-row align-items-center">-->
+<!--                        <div>-->
+<!--                          <img-->
+<!--                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"-->
+<!--                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">-->
+<!--                        </div>-->
+<!--                        <div class="ms-3">-->
+<!--                          <h5>MacBook Pro</h5>-->
+<!--                          <p class="small mb-0">1TB, Graphite</p>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="d-flex flex-row align-items-center">-->
+<!--                        <div style="width: 50px;">-->
+<!--                          <h5 class="fw-normal mb-0">1</h5>-->
+<!--                        </div>-->
+<!--                        <div style="width: 80px;">-->
+<!--                          <h5 class="mb-0">$1799</h5>-->
+<!--                        </div>-->
+<!--                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+              </div>
+              <div class="col-lg-5">
+
+                <div class="card bg-primary text-white rounded-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                      <h5 class="mb-0">Card details</h5>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                        class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                    </div>
+
+                    <p class="small mb-2">Card type</p>
+                    <a href="#!" type="submit" class="text-white"><i
+                        class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                    <a href="#!" type="submit" class="text-white"><i
+                        class="fab fa-cc-visa fa-2x me-2"></i></a>
+                    <a href="#!" type="submit" class="text-white"><i
+                        class="fab fa-cc-amex fa-2x me-2"></i></a>
+                    <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
+
+                    <form class="mt-4">
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                          placeholder="Cardholder's Name" />
+                        <label class="form-label" for="typeName">Cardholder's Name</label>
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                          placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                        <label class="form-label" for="typeText">Card Number</label>
+                      </div>
+
+                      <div class="row mb-4">
+                        <div class="col-md-6">
+                          <div class="form-outline form-white">
+                            <input type="text" id="typeExp" class="form-control form-control-lg"
+                              placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
+                            <label class="form-label" for="typeExp">Expiration</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-outline form-white">
+                            <input type="password" id="typeText" class="form-control form-control-lg"
+                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                            <label class="form-label" for="typeText">Cvv</label>
+                          </div>
+                        </div>
+                      </div>
+
+                    </form>
+
+                    <hr class="my-4">
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Subtotal</p>
+                      <p class="mb-2">$4798.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                      <p class="mb-2">Shipping</p>
+                      <p class="mb-2">$20.00</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total(Incl. taxes)</p>
+                      <p class="mb-2">$4818.00</p>
+                    </div>
+                    <form action="{% url 'checkout_pg' %}">
+                    <button type="submit" class="btn btn-info btn-block btn-lg">Checkout
+
+                    </button>
+                        </form>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- ***** Contact Area Ends ***** -->
+
+    <!-- ***** Subscribe Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
+                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                    </div>
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-2">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul>
+                                <li>Store Location:<br><span>Sunny Isles Beach, FL 33160, United States</span></li>
+                                <li>Phone:<br><span>010-020-0340</span></li>
+                                <li>Office Location:<br><span>North Miami Beach</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
+                                <li>Email:<br><span>info@company.com</span></li>
+                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Subscribe Area Ends ***** -->
+
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <div class="logo">
+                            <img src="{% static 'assets/images/white-logo.png' %}" alt="hexashop ecommerce templatemo">
+                        </div>
+                        <ul>
+                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
+                            <li><a href="#">hexashop@company.com</a></li>
+                            <li><a href="#">010-020-0340</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Shopping &amp; Categories</h4>
+                    <ul>
+                        <li><a href="#">Men’s Shopping</a></li>
+                        <li><a href="#">Women’s Shopping</a></li>
+                        <li><a href="#">Kid's Shopping</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h4>Help &amp; Information</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
+
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+
+                        <br>Distributed By: <a href="https://themewagon.com" target="_blank" title="free & premium responsive templates">ThemeWagon</a></p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        @media (min-width: 1025px) {
+        .h-custom {
+        height: 100vh !important;
+        }
+        }
+    </style>
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
+    <script src="{% static 'assets/js/datepicker.js' %}"></script>
+    <script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="{% static 'assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.js' %}"></script>
+
+    <!-- Global Init -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+
+            });
+        });
+
+    </script>
+
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        {% if messages %}
+            {% for i in messages %}
+                {% if i.tags == 'warning' %}
+                    <script>
+                    swal('{{i}}','','warning')
+                    </script>
+                {% elif i.tags == 'error' %}
+                     <script>
+                     swal('{{i}}','','error')
+                     </script>
+                {% else %}
+                     <script>
+                     swal('{{i}}','','success')
+                     </script>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+
+
+
+  </body>
+
+</html>
