@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from digiadminapp.models import categorydb,productdb
-from digiuserapp.models import Userlogdb,cartdb
+from digiuserapp.models import Userlogdb,cartdb,checkoutDb
 
 # Create your views here.
 def home_pg(req):
@@ -60,7 +60,7 @@ def cart_save(req):
     if req.method=="POST":
         un=req.POST.get('uname')
         pn=req.POST.get('pname')
-        des=req.POST.get('pdescript')it
+        des=req.POST.get('pdescript')
         qn=req.POST.get('quantity')
         pr=req.POST.get('pprice')
         tp=req.POST.get('tprice')
@@ -89,9 +89,17 @@ def order_page(req):
         cntr=req.POST.get('cntry')
         state=req.POST.get('state')
         zp=req.POST.get('zip')
-        payment=req.POST.get('paymentMethod')
+        payment1=req.POST.get('paymentMethod')
         noc=req.POST.get('cname')
         ccn=req.POST.get('cnumber')
+        exp=req.POST.get('cdate')
+        cv=req.POST.get('cvv')
+        obj1=checkoutDb(First_name=fn,Last_name=ln,User_name=un,Email=em,Address1=add1,Address2=add2,Country=cntr,
+                        State=state,Zip=zp,payment=payment1,Name_on_card=noc,credit_card_number=ccn, Expire_date=exp,
+                        Cvv=cv)
+        obj1.save()
+        messages.success(req,"ORDER PLACED SUCCESSFULLY")
+        return redirect(home_pg)
 
 
 

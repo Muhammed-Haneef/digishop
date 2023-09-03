@@ -30,8 +30,8 @@ class checkoutDb(models.Model):
      Zip=models.IntegerField(null=True,blank=True)
      payment=models.CharField(max_length=100,null=True,blank=True)
      Name_on_card=models.CharField(max_length=100,null=True,blank=True)
-     credi_card_number=models.IntegerField(null=True,blank=True)
-     Expire_date=models.IntegerField(null=True,blank=True)
+     credit_card_number=models.IntegerField(null=True,blank=True)
+     Expire_date=models.CharField(max_length=100,null=True,blank=True)
      Cvv=models.IntegerField(null=True,blank=True)
 
 

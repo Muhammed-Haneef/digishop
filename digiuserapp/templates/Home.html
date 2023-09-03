@@ -54,7 +54,7 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="{% static 'assets/images/logo.png' %}">
+                            <img src="{% static 'assets/images/digishoplogo.png' %}" width="200px" height="150px">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -861,6 +861,25 @@ https://templatemo.com/tm-571-hexashop
         });
 
     </script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  </body>
+        {% if messages %}
+            {% for i in messages %}
+                {% if i.tags == 'warning' %}
+                    <script>
+                    swal('{{i}}','','warning')
+                    </script>
+                {% elif i.tags == 'error' %}
+                     <script>
+                     swal('{{i}}','','error')
+                     </script>
+                {% else %}
+                     <script>
+                     swal('{{i}}','','success')
+                     </script>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+    </body>
 </html>
